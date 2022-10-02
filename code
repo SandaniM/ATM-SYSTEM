@@ -1,0 +1,114 @@
+#include <stdio.h>
+
+	float amount, deposit, withdraw;
+	
+	int choice, pin ;
+	
+	char res;
+	
+int main()
+
+{
+		printf("ENTER YOUR PIN NUMBER:");
+		scanf("%d",&pin);
+
+	 	if (9999 < pin )
+		{
+			printf("PLEASE ENTER VALID PIN.\n");
+			
+			printf("ENTER YOUR PIN NUMBER:");
+			scanf("%d",&pin);
+		}else
+		
+		{
+	do
+
+	{
+
+		printf("**************Welcome to ATM Service**************\n");
+
+		printf("1. Check Balance\n");
+
+		printf("2. Withdraw Cash\n");
+
+		printf("3. Deposit Cash\n");
+
+		printf("4. Quit\n");
+
+		printf("Enter your choice: ");
+
+		scanf("%d",&choice);
+
+		switch (choice)
+
+		{
+
+		case 1:
+
+			printf("\n YOUR BALANCE IN Rs : %f\n ",amount);
+
+			break;
+
+		case 2:
+
+			printf("\n ENTER THE AMOUNT TO WITHDRAW:\n");
+			
+			scanf("%f",&withdraw);
+			amount = amount - withdraw;
+
+			if (withdraw >amount)
+
+			{
+
+				printf("\n INSUFFICENT BALANCE.\n");
+
+			}
+
+			else
+
+			{
+
+				printf("\n YOUR CURRENT BALANCE IS %.2f\n",amount);
+				printf(" PLEASE COLLECT CASH.\n");
+			}
+
+			break;
+
+		case 3:
+
+			printf("\n ENTER THE AMOUNT TO DEPOSIT:");
+
+			scanf("%f",&deposit);
+
+                        amount = amount + deposit;
+
+			printf("\nYOUR BALANCE IS %f",amount);
+
+			break;
+
+		case 4:
+
+			printf("\n **********THANKS FOR USING ATM**********\n");
+
+			break;
+
+		default:
+
+			printf("\n *****INVALID CHOICE*****\n");
+
+		}
+		fflush(stdin);
+		
+		printf("\n\n\n DO U WISH TO HAVE ANOTHER TRANSCATION?(y/n):\n\n\n");
+
+		scanf("%c",&res);
+		
+		
+	} while (res == 'y');
+
+
+	printf("\n\n **********THANKS FOR USING OUR ATM SERVICE**********\n\n");
+
+	}
+return 0;
+}
